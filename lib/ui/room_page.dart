@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:rm_systems_mobile/ui/room_detail_page.dart';
 import 'base_scaffold.dart';
 
 class RoomPage extends StatelessWidget {
@@ -41,7 +42,12 @@ class RoomTile extends StatelessWidget {
         subtitle: Text('Capacidade: $capacity pessoas', style: TextStyle(color: Colors.white70)),
         trailing: Icon(Icons.arrow_forward_ios, color: Colors.white70, size: 16.0),
         onTap: () {
-          // Ação ao tocar na sala
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => RoomDetailPage(name: name, capacity: capacity),
+            ),
+          );
         },
       ),
     );
